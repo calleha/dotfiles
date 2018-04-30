@@ -193,4 +193,7 @@ bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym $mod+n exec nautilus
 bindsym $mod+c exec google-chrome
 bindsym $mod+b exec google-chrome; gaps inner current set 0; gaps outer current set 0
+bindsym $mod+Shift+b exec google-chrome --incognito; gaps inner current set 0; gaps outer current set 0
 bindsym $mod+m exec discord
+bindsym $mod+x exec spotify
+bindsym $mod+y exec pavucontrol
