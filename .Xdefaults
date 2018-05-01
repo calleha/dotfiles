@@ -2,12 +2,13 @@ URxvt.depth:		32
 URxvt.foreground:	#ffffff
 URxvt.background:	[80]#000000
 URxvt.scrollBar:	false
+URxvt.cursorBlink:	1
+URxvt.cursorColor:	white
+URxvt.letterSpace:	-1
 
 URxvt.font:		xft:monospace:size=12
 URxvt.boldFont:		xft:monospace:size=12
 !!URxvt.boldFont:	xft:monospace:size=12:weight=bold
-URxvt.cursorColor:	white
-URxvt.letterSpace:	-1
 
 !! gnome-terminal colors for urxvt
 ! black
