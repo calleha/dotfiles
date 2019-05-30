@@ -5,10 +5,11 @@ URxvt.scrollBar:	false
 URxvt.cursorBlink:	1
 URxvt.cursorColor:	white
 URxvt.letterSpace:	-1
+URxvt.internalBorder:	16
 
-URxvt.font:		xft:monospace:size=12
-URxvt.boldFont:		xft:monospace:size=12
-!!URxvt.boldFont:	xft:monospace:size=12:weight=bold
+URxvt.font:		xft:monospace:size=11
+URxvt.boldFont:		xft:monospace:size=11
+!!URxvt.boldFont:	xft:monospace:size=11:weight=bold
 
 !! gnome-terminal colors for urxvt
 ! black
