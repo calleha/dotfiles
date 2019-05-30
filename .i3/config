@@ -22,7 +22,7 @@
 	# Application launcher
 	set $applauncher "dmenu_run -sb '#33333f' -sf '#3355ff'"
 	# Editor
-	set $emacs "urxvt -e emacsclient -c -nw"
+	set $emacs "emacsclient -c"
 	set $vim "urxvt -e vim"
 
 	# Workspaces
@@ -45,6 +45,9 @@
 	for_window [class="URxvt" instance="floating"] floating enable
 
 	# Colors       	        border  backgr. text    indicator child_border
+	#client.focused          #4c7899 #285577 #ffffff #5c73e6   #5c73e6
+	#client.focused_inactive #333333 #5f676a #ffffff #e68a5c   #e68a5c
+	#client.unfocused        #333333 #222222 #888888 #e68a5c   #e68a5c
 	client.focused          #4c7899 #285577 #ffffff #4c7899   #285577
 	client.focused_inactive #333333 #5f676a #ffffff #000000cc #000000cc
 	client.unfocused        #333333 #222222 #888888 #000000cc #000000cc
@@ -67,31 +70,37 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+b focus left
+bindsym $mod+n focus down
+bindsym $mod+p focus up
+bindsym $mod+f focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
+bindsym $mod+Shift+b move left
+bindsym $mod+Shift+n move down
+bindsym $mod+Shift+p move up
+bindsym $mod+Shift+f move right
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal/vertical orientation
-bindsym $mod+dead_diaeresis split h
-bindsym $mod+apostrophe split v
+bindsym $mod+apostrophe split toggle
+bindsym $mod+backslash split toggle
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
+bindsym $mod+F11 fullscreen toggle
 
 # change container layout (default, stacked, tabbed, toggle split)
-bindsym $mod+s layout default
-bindsym $mod+w layout tabbed
+  # toggle between hsplit and vsplit
+  bindsym $mod+s layout toggle split
+  # toggle between tabbed and tiled
+  bindsym $mod+w layout toggle tabbed split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -131,8 +140,10 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 	# Make the currently focused window a scratchpad
 	bindsym $mod+Shift+minus move scratchpad
+	bindsym $mod+Shift+plus move scratchpad
 	# Show the first scratchpad window
 	bindsym $mod+minus scratchpad show
+	bindsym $mod+plus scratchpad show
 
 # Restarting and exiting
 
@@ -143,34 +154,95 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 	# exit i3 (logs you out of your X session)
 	bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Do you want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# Unused features
+# Modes
 
-	# resize window (you can also use the mouse for that)
-	mode "resize" {
+  # resize window (you can also use the mouse for that)
+	mode "Resize" {
 	     # These bindings trigger as soon as you enter the resize mode
-	     bindsym h resize shrink width 10 px or 10 ppt
-	     bindsym j resize grow height 10 px or 10 ppt
-	     bindsym k resize shrink height 10 px or 10 ppt
-	     bindsym l resize grow width 10 px or 10 ppt
+	     bindsym h resize shrink width 4 px or 4 ppt
+	     bindsym j resize grow height 4 px or 4 ppt
+	     bindsym k resize shrink height 4 px or 4 ppt
+	     bindsym l resize grow width 4 px or 4 ppt
 
 	     # same bindings, but for the arrow keys
-	     bindsym Left resize shrink width 10 px or 10 ppt
-	     bindsym Down resize grow height 10 px or 10 ppt
-	     bindsym Up resize shrink height 10 px or 10 ppt
-	     bindsym Right resize grow width 10 px or 10 ppt
+	     bindsym Left resize shrink width 4 px or 4 ppt
+	     bindsym Down resize grow height 4 px or 4 ppt
+	     bindsym Up resize shrink height 4 px or 4 ppt
+	     bindsym Right resize grow width 4 px or 4 ppt
+
+	     # emacs bindings
+	     bindsym b resize shrink width 4 px or 4 ppt
+	     bindsym n resize grow height 4 px or 4 ppt
+	     bindsym p resize shrink height 4 px or 4 ppt
+	     bindsym f resize grow width 4 px or 4 ppt
 
 	     # back to normal: Enter or Escape
 	     bindsym Return mode "default"
 	     bindsym Escape mode "default"
+	     bindsym Ctrl+g mode "default"
 	}
 
-	#bindsym $mod+r mode "resize"
+	bindsym $mod+r mode "Resize"
+
+  # resize gaps mode
+	mode "Resize gaps" {
+	     bindsym j gaps outer current minus 4
+	     bindsym k gaps outer current plus 4
+	     bindsym p gaps outer current minus 4
+	     bindsym n gaps outer current plus 4
+	     bindsym Down gaps outer current minus 4
+	     bindsym Up gaps outer current plus 4
+	     bindsym Shift+j gaps inner current minus 4
+	     bindsym Shift+k gaps inner current plus 4
+	     bindsym Shift+p gaps inner current minus 4
+	     bindsym Shift+n gaps inner current plus 4
+	     bindsym Shift+Down gaps inner current minus 4
+	     bindsym Shift+Up gaps inner current plus 4
+	     bindsym 0 gaps inner current set 0; gaps outer current set 0; mode "default"
+	     bindsym $mod+g gaps inner current set 12; gaps outer current set 0; mode "default"
+
+	     bindsym Return mode "default"
+	     bindsym Escape mode "default"
+	     bindsym Ctrl+g mode "default"
+	}
+
+	bindsym $mod+g mode "Resize gaps"
+
+  # resize gaps mode (all workspaces)
+	mode "Resize gaps (all workspaces)" {
+	     bindsym j gaps outer all minus 4
+	     bindsym k gaps outer all plus 4
+	     bindsym p gaps outer all minus 4
+	     bindsym n gaps outer all plus 4
+	     bindsym Down gaps outer all minus 4
+	     bindsym Up gaps outer all plus 4
+	     bindsym Shift+j gaps inner all minus 4
+	     bindsym Shift+k gaps inner all plus 4
+	     bindsym Shift+p gaps inner all minus 4
+	     bindsym Shift+n gaps inner all plus 4
+	     bindsym Shift+Down gaps inner all minus 4
+	     bindsym Shift+Up gaps inner all plus 4
+	     bindsym 0 gaps inner all set 0; gaps outer all set 0; mode "default"
+	     bindsym $mod+g gaps inner all set 12; gaps outer all set 0; mode "default"
+
+	     bindsym Return mode "default"
+	     bindsym Escape mode "default"
+	     bindsym Ctrl+g mode "default"
+	}
+
+	bindsym $mod+Shift+g mode "Resize gaps (all workspaces)"
+
 
 # Resize without resize mode
-	bindsym $mod+y resize shrink width 10 px or 10 ppt
-        bindsym $mod+u resize grow height 10 px or 10 ppt
-        bindsym $mod+i resize shrink height 10 px or 10 ppt
-        bindsym $mod+o resize grow width 10 px or 10 ppt
+	bindsym $mod+y resize shrink width 4 px or 4 ppt
+        bindsym $mod+u resize grow height 4 px or 4 ppt
+        bindsym $mod+i resize shrink height 4 px or 4 ppt
+        bindsym $mod+o resize grow width 4 px or 4 ppt
+	
+	bindsym $mod+Left resize shrink width 4 px or 4 ppt
+        bindsym $mod+Down resize grow height 4 px or 4 ppt
+        bindsym $mod+Up resize shrink height 4 px or 4 ppt
+        bindsym $mod+Right resize grow width 4 px or 4 ppt
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -180,13 +252,22 @@ bar {
 	position	top
 	tray_output	$tray
 	colors {
+
 	       background	  #00000000
-	       separator	  #3355ffff
+	       separator	  #de8642ff
 	       #		  border    backgr.   text
-	       focused_workspace  #00000000 #00000000 #3355ffff
+	       focused_workspace  #00000000 #00000000 #de8642ff
 	       active_workspace	  #00000000 #00000000 #3333ccff
 	       inactive_workspace #00000000 #00000000 #33333fff
 	       urgent_workspace	  #00000000 #00000000 #cc0000ff
+
+	       #background	   #00000000
+	       #separator	   #3355ffff
+	       #		   border    backgr.   text
+	       #focused_workspace  #00000000 #00000000 #3355ffff
+	       #active_workspace   #00000000 #00000000 #3333ccff
+	       #inactive_workspace #00000000 #00000000 #33333fff
+	       #urgent_workspace   #00000000 #00000000 #cc0000ff
 
 	       #background	   #000000cc
 	       #separator	   #0055ffff
@@ -197,10 +278,6 @@ bar {
 	       #urgent_workspace   #000000cc #000000cc #cc0000ff
 	}
 }
-
-# Disable/enable gaps for current workspace
-bindsym $mod+g gaps inner current set 0; gaps outer current set 0
-bindsym $mod+Shift+g gaps inner current set 12; gaps outer current set 0
 
 # Controls
 
@@ -223,34 +300,49 @@ bindsym $mod+Shift+g gaps inner current set 12; gaps outer current set 0
 
 # Application shortcuts
 
-	bindsym $mod+Return exec --no-startup-id $terminal
-	bindsym $mod+Shift+Return exec --no-startup-id $terminalfloating
-	bindsym $mod+d exec --no-startup-id $applauncher
-	bindsym $mod+n exec --no-startup-id emacs -f notmuch 
-	bindsym $mod+Shift+n exec $filesgui
-	bindsym $mod+r exec --no-startup-id $filescli
+# Basic ones
+     bindsym $mod+Return exec --no-startup-id $terminal
+     bindsym $mod+Shift+Return exec --no-startup-id $terminalfloating
+     bindsym $mod+d exec --no-startup-id $applauncher
+     bindsym $mod+e exec --no-startup-id $emacs
 
-	bindsym $mod+e exec --no-startup-id $emacs
-	bindsym $mod+v exec --no-startup-id $vim	
+# Start application mode
+mode "s-x" {
+     bindsym $mod+Return exec --no-startup-id $terminal; mode "default"
+     bindsym $mod+Shift+Return exec --no-startup-id $terminalfloating; mode "default"
+     bindsym $mod+d exec --no-startup-id $applauncher; mode "default"
+     bindsym $mod+n exec $filesgui; mode "default"
+     bindsym $mod+r exec --no-startup-id $filescli; mode "default"
 
-	bindsym $mod+c exec --no-startup-id google-chrome
-	bindsym $mod+Control+c exec --no-startup-id google-chrome; gaps inner current set 0; gaps outer current set 0
+     bindsym $mod+e exec --no-startup-id $emacs; mode "default"
+     bindsym $mod+v exec --no-startup-id $vim; mode "default"
 
-	bindsym $mod+b exec firefox
-	bindsym $mod+Shift+b exec firefox -private-window
-	bindsym $mod+Control+b exec firefox; gaps inner current set 0; gaps outer current set 0
+     bindsym $mod+c exec --no-startup-id google-chrome; mode "default"
+     bindsym $mod+Control+c exec --no-startup-id google-chrome; gaps inner current set 0; gaps outer current set 0; mode "default"
 
-	bindsym $mod+m exec --no-startup-id Discord
-	bindsym $mod+Shift+m exec --no-startup-id killall Discord
-	bindsym $mod+x exec --no-startup-id spotify
-	bindsym $mod+p exec pavucontrol
-	bindsym $mod+Shift+i exec ibus-setup
-	bindsym $mod+a exec arandr
-	bindsym $mod+t exec transmission-gtk
+     bindsym $mod+f exec firefox; mode "default"
+     bindsym $mod+Shift+f exec firefox -private-window; mode "default"
+     bindsym $mod+Control+f exec firefox; gaps inner current set 0; gaps outer current set 0; mode "default"
 
-	#Mount phone
-	bindsym $mod+Shift+p exec --no-startup-id "simple-mtpfs --device 1 ~/Phone/"
-	#bindsym $mod+Shift+p exec --no-startup-id "umount ~/Phone/"
+     bindsym $mod+m exec --no-startup-id Discord; mode "default"
+     bindsym $mod+Shift+m exec --no-startup-id killall Discord; mode "default"
+     bindsym $mod+s exec --no-startup-id spotify; mode "default"
+     bindsym $mod+p exec pavucontrol; mode "default"
+     bindsym $mod+i exec ibus-setup; mode "default"
+     bindsym $mod+a exec arandr; mode "default"
+     bindsym $mod+t exec transmission-gtk; mode "default"
+
+     #Mount phone
+     bindsym $mod+z exec --no-startup-id "simple-mtpfs --device 1 ~/Phone/"
+     #bindsym $mod+Shift+m exec --no-startup-id "umount ~/Phone/"
+
+     bindsym Return mode "default"
+     bindsym Escape mode "default"
+     bindsym Ctrl+g mode "default"
+     }
+
+     bindsym $mod+x mode "s-x"
+     bindsym $mod+Shift+x mode "s-x"; split toggle
 
 # Startup applications
 
@@ -269,6 +361,6 @@ bindsym $mod+Shift+g gaps inner current set 12; gaps outer current set 0
 	# Automount with udiskie
 	exec --no-startup-id udiskie
 	# Swap Left Control and Caps Lock (Options: ctrl:swapcaps / ctrl:nocaps)
-	exec --no-startup-id setxkbmap -layout se -variant swerty -option ctrl:nocaps
+	exec --no-startup-id setxkbmap -layout se -option ctrl:nocaps
 	# Emacs
 	exec --no-startup-id emacs --daemon
