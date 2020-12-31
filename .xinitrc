@@ -2,6 +2,8 @@
 	# Swap Left Control and Caps Lock (Options: ctrl:swapcaps / ctrl:nocaps)
 	setxkbmap -layout us -option ctrl:nocaps -variant altgr-intl &
 	xcape -e "Control_L=Escape" &
+	# hotkey daemon
+	sxhkd &
 	# Emacs
 	emacs --daemon &
 	# Screen resolution (set accordingly)

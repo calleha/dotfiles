@@ -1,0 +1,91 @@
+;;;** evil
+;(add-to-list 'load-path "~/.emacs.d/el-get/evil")
+;(require 'evil)
+;(evil-mode 0)
+
+;; replace insert state with emacs state
+;(defalias 'evil-insert-state 'evil-emacs-state)
+
+;; set emacs state as default state
+;(setq evil-default-state 'emacs)
+
+;; show evil state in modeline
+;(setq evil-normal-state-tag "NORMAL")
+;(setq evil-insert-state-tag "INSERT")
+;(setq evil-visual-state-tag "VISUAL")
+;(setq evil-replace-state-tag "REPLACE")
+;(setq evil-emacs-state-tag "EMACS")
+
+;; exit insert mode by pressing j and then j quickly
+;(setq key-chord-two-keys-delay 0.5)
+;(key-chord-define evil-insert-state-map "jj" 'evil-normal-state)
+;(key-chord-define evil-emacs-state-map "jj" 'evil-normal-state)
+;(key-chord-mode 1)
+
+;; map <TAB> to org-cycle when in org-mode
+;(evil-define-key 'normal org-mode-map
+;  (kbd "TAB") 'org-cycle
+;  ">" 'org-shiftmetaright
+;  "<" 'org-shiftmetaleft)
+
+;;;* Bindings
+
+;; vim keys in insert mode by holding ctrl
+;;(define-key evil-insert-state-map (kbd "C-h") 'backward-char)
+;;(define-key evil-insert-state-map (kbd "C-j") 'next-line)
+;;(define-key evil-insert-state-map (kbd "C-k") 'previous-line)
+;;(define-key evil-insert-state-map (kbd "C-l") 'forward-char)
+;;(define-key evil-insert-state-map (kbd "C-w") 'forward-word)
+;;(define-key evil-insert-state-map (kbd "C-b") 'backward-word)
+
+;; emacs keys for moving to start and end of line
+;;(define-key evil-insert-state-map (kbd "C-a") 'move-beginning-of-line)
+;;(define-key evil-insert-state-map (kbd "C-e") 'move-end-of-line)
+;;(define-key evil-normal-state-map (kbd "C-e") 'move-end-of-line)
+;;(define-key evil-visual-state-map (kbd "C-e") 'move-end-of-line)
+
+;; vim keys in notmuch
+;;(define-key notmuch-search-mode-map (kbd "h") 'backward-char)
+;;(define-key notmuch-search-mode-map (kbd "j") 'next-line)
+;;(define-key notmuch-search-mode-map (kbd "k") 'previous-line)
+;;(define-key notmuch-search-mode-map (kbd "l") 'forward-char)
+;;(define-key notmuch-search-mode-map (kbd "gg") 'beginning-of-buffer)
+;;(define-key notmuch-search-mode-map (kbd "G") 'end-of-buffer)
+;;(define-key notmuch-show-mode-map (kbd "h") 'backward-char)
+;;(define-key notmuch-show-mode-map (kbd "j") 'next-line)
+;;(define-key notmuch-show-mode-map (kbd "k") 'previous-line)
+;;(define-key notmuch-show-mode-map (kbd "l") 'forward-char)
+;;(define-key notmuch-show-mode-map (kbd "gg") 'beginning-of-buffer)
+;;(define-key notmuch-show-mode-map (kbd "G") 'end-of-buffer)
+;;(define-key notmuch-hello-mode-map (kbd "h") 'backward-char)
+;;(define-key notmuch-hello-mode-map (kbd "j") 'next-line)
+;;(define-key notmuch-hello-mode-map (kbd "k") 'previous-line)
+;;(define-key notmuch-hello-mode-map (kbd "l") 'forward-char)
+;;(define-key notmuch-hello-mode-map (kbd "gg") 'beginning-of-buffer)
+;;(define-key notmuch-hello-mode-map (kbd "G") 'end-of-buffer)
+
+;; esc to quit
+;(defun minibuffer-keyboard-quit ()
+;  "Abort recursive edit.
+;In Delete Selection mode, if the mark is active, just deactivate it;
+;then it takes a second \\[keyboard-quit] to abort the minibuffer."
+;  (interactive)
+;  (if (and delete-selection-mode transient-mark-mode mark-active)
+;      (setq deactivate-mark  t)
+;    (when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
+;    (abort-recursive-edit)))
+;(define-key evil-normal-state-map [escape] 'keyboard-quit)
+;(define-key evil-visual-state-map [escape] 'keyboard-quit)
+;(define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
+;(define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
+;(define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
+;(define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
+;(define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
+;(global-set-key [escape] 'evil-exit-emacs-state)
+
+;;;* Macros
+
+;; Insert vertical space
+;(fset 'vspace
+;   [?i ?# ?+ ?L ?A ?T ?E ?X ?: ?  ?\\ ?v ?s ?p ?a ?c ?e ?\{ ?2 ?0 ?p ?t ?\} escape])
+;(define-key evil-normal-state-map (kbd "f x") 'vspace)
