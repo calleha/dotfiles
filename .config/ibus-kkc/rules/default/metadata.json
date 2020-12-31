@@ -1,0 +1,6 @@
+{
+  "name" : "ibus-kkc:default",
+  "description" : "Default typing rule",
+  "filter" : "simple",
+  "priority" : 99
+}

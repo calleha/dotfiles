@@ -1,0 +1,25 @@
+;; -*- emacs-lisp -*- <20/05/05 05:12:26 /home/calleha/.emacs.d/tramp>
+;; Tramp connection history.  Don't change this file.
+;; You can delete it, forcing Tramp to reapply the checks.
+
+(((tramp-file-name "sudo" "root" nil "localhost" nil nil nil)
+  ("uname" "Linux 5.6.6-300.fc32.x86_64")
+  ("locale" "LC_ALL=en_US.utf8")
+  ("test" "test")
+  ("remote-path"
+   ("/usr/bin" "/bin" "/sbin" "/usr/sbin" "/usr/local/bin" "/usr/local/sbin"))
+  ("remote-shell" "/bin/sh")
+  ("readlink" "\\readlink")
+  ("stat" "env QUOTING_STYLE=locale \\stat")
+  ("file-exists" "test -e")
+  ("id" "/usr/bin/id")
+  ("gid-integer" 0)
+  ("case-insensitive" nil)
+  ("gid-string" "root")
+  ("uid-integer" 0)
+  ("perl-file-spec" t)
+  ("perl-cwd-realpath" t)
+  ("perl" "\\perl")
+  ("tmpdir" "/sudo:root@localhost:/tmp")
+  ("touch-t" t)
+  ("touch" "\\touch")))

@@ -1,3 +1,3 @@
 # dotfiles
 
-Here are my dotfiles. Most notably my emacs configuration and my i3 configuration.
+There are the dotfiles for my x230 running Fedora.

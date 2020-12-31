@@ -1,0 +1,20 @@
+# general syntax:
+#
+#[MODIFIER + ]*[@|!]KEYSYM
+#    COMMAND
+
+# screenshots
+Print
+    import -window root Pictures/screenshots/screenshot_$(date '+%Y-%m-%d_%H:%M')_$(echo $RANDOM).png
+alt + Print
+    import Pictures/screenshots/screenshot_$(date '+%Y-%m-%d_%H:%M')_$(echo $RANDOM).png
+
+# passmenu
+super + c
+    passmenu -l 16
+super + shift + c
+    passmenu --type -l 16
+
+# wifi script (networkmanager)
+super + w
+    connecttowifi.sh
