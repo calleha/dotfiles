@@ -1,2 +1,2 @@
-URxvt.inputMethod: ibus
-URxvt.preeditType: OverTheSpot
+Xcursor.theme: Adwaita
+Xcursor.size: 16

@@ -4,12 +4,11 @@ URxvt.background:	[80]#000000
 URxvt.scrollBar:	false
 URxvt.cursorBlink:	1
 URxvt.cursorColor:	white
-URxvt.letterSpace:	-1
+URxvt.letterspace:	-1
 URxvt.internalBorder:	16
 
-URxvt.font:		xft:monospace:size=11
-URxvt.boldFont:		xft:monospace:size=11
-!!URxvt.boldFont:	xft:monospace:size=11:weight=bold
+URxvt.font:		xft:DejaVuSansMono:size=11
+URxvt.boldFont:		xft:DejaVuSansMono:size=11
 
 !! gnome-terminal colors for urxvt
 ! black
@@ -36,14 +35,3 @@ URxvt.color14 : #55FFFF
 ! white
 URxvt.color7  : #AAAAAA
 URxvt.color15 : #FFFFFF
-
-!! Extensions needed
-
-!! Change font size on Control-Plus/Minus
-!!URxvt.keysym.Control-0x2b: perl:font-size:increase
-!!URxvt.keysym.Control-0x2d: perl:font-size:decrease
-
-!! Clickable links (set browser accordingly)
-!!URxvt.perl-ext-common: default,matcher
-!!URxvt.url-launcher: google-chrome
-!!URxvt.matcher.button: 1

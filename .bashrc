@@ -29,7 +29,7 @@ export QT_IM_MODULE=ibus
 export VISUAL="emacsclient -c -nw"
 export EDITOR="emacsclient -c -nw"
 
-# PS1
+#PS1
 PS1='\W $ '
 
 # Aliases
@@ -42,4 +42,3 @@ alias rm='rm -i'
 alias emacs='emacs -nw'
 alias emacsclient='emacsclient -c -nw'
 alias sudo='sudo '
-alias dmenu='dmenu -sb "#33333f" -sf "#3355ff"'

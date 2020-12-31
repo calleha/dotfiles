@@ -1,56 +1,16 @@
-[Default Applications]
-text/html=emacsclient.desktop;firefox.desktop
-x-scheme-handler/http=firefox.desktop
-x-scheme-handler/https=firefox.desktop
-x-scheme-handler/about=firefox.desktop
-x-scheme-handler/unknown=firefox.desktop
-x-scheme-handler/ftp=firefox.desktop
-x-scheme-handler/chrome=firefox.desktop
-application/x-extension-htm=firefox.desktop
-application/x-extension-html=firefox.desktop
-application/x-extension-shtml=firefox.desktop
-application/xhtml+xml=firefox.desktop
-application/x-extension-xhtml=firefox.desktop
-application/x-extension-xht=firefox.desktop
-application/x-shellscript=nautilus-autorun-software.desktop
-text/plain=emacsclient.desktop
-application/pdf=emacsclient.desktop
-video/x-matroska=mpv.desktop
-audio/flac=mpv.desktop
-inode/directory=ranger.desktop
-application/x-desktop=emacsclient.desktop
-image/jpeg=sxiv.desktop
-image/png=feh.desktop
-
 [Added Associations]
-x-scheme-handler/http=firefox.desktop;userapp-Firefox-GA86ZZ.desktop;
-x-scheme-handler/https=firefox.desktop;userapp-Firefox-GA86ZZ.desktop;
-x-scheme-handler/ftp=firefox.desktop;userapp-Firefox-GA86ZZ.desktop;
-x-scheme-handler/chrome=firefox.desktop;userapp-Firefox-GA86ZZ.desktop;
-text/html=emacs.desktop;firefox.desktop;userapp-Firefox-GA86ZZ.desktop;
-application/x-extension-htm=firefox.desktop;userapp-Firefox-GA86ZZ.desktop;
-application/x-extension-html=google-chrome.desktop;firefox.desktop;userapp-Firefox-GA86ZZ.desktop;
-application/x-extension-shtml=firefox.desktop;userapp-Firefox-GA86ZZ.desktop;
-application/xhtml+xml=firefox.desktop;userapp-Firefox-GA86ZZ.desktop;
-application/x-extension-xhtml=firefox.desktop;userapp-Firefox-GA86ZZ.desktop;
-application/x-extension-xht=firefox.desktop;userapp-Firefox-GA86ZZ.desktop;
-application/x-shellscript=nautilus-autorun-software.desktop;
-text/plain=mpv.desktop;emacsclient.desktop;emacs.desktop;
-text/x-matlab=libreoffice-writer.desktop;
-application/pdf=org.gnome.Evince.desktop;evince.desktop;org.pwmt.zathura.desktop;
-video/x-matroska=mpv.desktop;
-audio/flac=vlc.desktop;mpv.desktop;
-application/x-sharedlib=org.gnome.FileRoller.desktop;nautilus-autorun-software.desktop;emacs.desktop;
-application/x-rpm=org.gnome.FileRoller.desktop;
-video/x-msvideo=vlc.desktop;
-audio/x-wav=vlc.desktop;
-audio/mp4=mpv.desktop;
-application/x-ms-dos-executable=wine.desktop;
-image/png=eog.desktop;feh.desktop;
-application/x-compressed-tar=org.gnome.FileRoller.desktop;
-application/zip=org.gnome.Nautilus.desktop;
-application/x-xz-compressed-tar=org.gnome.FileRoller.desktop;
-application/x-desktop=emacs.desktop;emacsclient.desktop;
-application/x-trash=emacs.desktop;
-image/jpeg=sxiv.desktop;feh.desktop;
-application/octet-stream=firefox.desktop;
+image/x-xcursor=emacs.desktop;
+text/plain=userapp-emacsclient -c-LNGOH0.desktop;
+application/pdf=org.pwmt.zathura.desktop;
+image/jpeg=feh.desktop;
+image/png=feh.desktop;
+application/octet-stream=mpv.desktop;userapp-emacsclient -c-J6VWV0.desktop;
+
+[Removed Associations]
+
+[Default Applications]
+text/plain=userapp-emacsclient -c-LNGOH0.desktop
+image/jpeg=feh.desktop
+image/png=feh.desktop
+x-scheme-handler/discord-402572971681644545=discord-402572971681644545.desktop
+application/octet-stream=userapp-emacsclient -c-J6VWV0.desktop
