@@ -10,8 +10,9 @@
 + .local/bin
 + .xinitrc
 + .gtkrc-2.0
-+ .bash*
-+ .X*
++ .bashrc
++ .Xdefaults
++ .Xresources
 + .notmuch-config
 + .mbsyncrc
 + .vimrc
