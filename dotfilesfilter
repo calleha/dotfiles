@@ -4,6 +4,10 @@
 - .config/libreoffice
 - .config/torbrowser
 - .config/unity3d
+- .config/PCSX2
+- .config/spotify-tui
+- .config/legendary
+- .config/transmission*
 + .config/**
 + .emacs.d/
 + .emacs.d/**
