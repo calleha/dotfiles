@@ -16,5 +16,13 @@ super + shift + c
     passmenu --type -l 16
 
 # wifi script (networkmanager)
-super + w
+super + w ; f
     connecttowifi.sh
+
+# set background
+super + w ; p
+    setbackground.sh
+
+# set keyboard layout
+alt + space
+    setkeyboardlayout.sh
