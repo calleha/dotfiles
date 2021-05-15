@@ -18,7 +18,16 @@
 + .config/sxhkd/**
 + .emacs.d/
 + .emacs.d/**
-+ .local/bin
++ .local/
++ .local/bin/
++ .local/bin/connecttowifi.sh
++ .local/bin/hibernateat5percent.sh
++ .local/bin/power.sh
++ .local/bin/setbackground.sh
++ .local/bin/setkeyboardlayout.sh
++ .local/bin/soxbatchconvert.sh
++ .local/bin/soxbatchreversestereo.sh
++ .local/bin/statusbar.sh
 + .xinitrc
 + .gtkrc-2.0
 + .bashrc
