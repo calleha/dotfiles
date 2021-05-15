@@ -2,7 +2,7 @@ IMAPAccount gmail
 # Address to connect to
 Host imap.gmail.com
 User calle.harleman01@gmail.com
-PassCmd "pass email/calle.harleman01@gmail.com"
+PassCmd "pass email/calle.harleman01@gmail.com-sync"
 # To store the password in an encrypted file use PassCmd instead of Pass
 # PassCmd "gpg2 -q --for-your-eyes-only --no-tty -d ~/.mailpass.gpg"
 #

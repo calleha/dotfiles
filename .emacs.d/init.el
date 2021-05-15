@@ -118,6 +118,9 @@
 ; disable ~files
 (setq make-backup-files nil)
 
+; enable dead keys
+(require 'iso-transl)
+
 ;;;** Aesthetics
 
 ; disable menu bar and other stuff

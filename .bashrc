@@ -29,6 +29,11 @@ export QT_IM_MODULE=ibus
 export VISUAL="emacsclient -c -nw"
 export EDITOR="emacsclient -c -nw"
 
+# nvm
+export NVM_DIR="$HOME/.local/src/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # PS1
 PS1='\W $ '
 

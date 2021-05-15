@@ -5,21 +5,27 @@
  ;; If there is more than one, they won't work right.
  '(mail-host-address "thinkpad")
  '(notmuch-saved-searches
-   (quote
-    ((:name "inbox" :query "tag:inbox" :key "i" :sort-order newest-first)
+   '((:name "inbox" :query "tag:inbox" :key "i" :sort-order newest-first)
      (:name "unread" :query "tag:unread" :key "u" :sort-order newest-first)
      (:name "flagged" :query "tag:flagged" :key "f" :sort-order newest-first)
      (:name "sent" :query "tag:sent" :key "t" :sort-order newest-first)
      (:name "drafts" :query "tag:draft" :key "d" :sort-order newest-first)
-     (:name "all mail" :query "*" :key "a"))))
+     (:name "all mail" :query "*" :key "a")))
  '(notmuch-search-oldest-first nil)
- '(org-agenda-files (quote ("~/Documents/school/ee/ee.org")))
- '(org-export-backends (quote (ascii beamer html icalendar latex odt)))
+ '(org-agenda-custom-commands
+   '(("2" "Agenda for two weeks" agenda ""
+      ((org-agenda-span 'fortnight)))
+     ("n" "Agenda and all TODOs"
+      ((agenda "" nil)
+       (alltodo "" nil))
+      nil)))
+ '(org-agenda-files
+   '("~/Documents/agenda/chores.org" "~/Documents/agenda/school.org" "~/Documents/agenda/shoppinglist.org" "~/Documents/agenda/configs.org" "~/Documents/school/ee/ee.org"))
+ '(org-export-backends '(ascii beamer html icalendar latex odt))
  '(org-export-headline-levels 5)
  '(org-export-with-toc nil)
  '(package-selected-packages
-   (quote
-    (sudo-edit gnuplot gnuplot-mode pdf-tools dmenu mc-extras multiple-cursors company-ycmd ycmd slime-company slime company org xclip ##))))
+   '(sudo-edit gnuplot gnuplot-mode pdf-tools dmenu mc-extras multiple-cursors company-ycmd ycmd slime-company slime company org xclip ##)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

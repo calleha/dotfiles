@@ -20,5 +20,7 @@
 	~/.local/bin/hibernateat5percent.sh &
 	# Unclutter
 	unclutter -idle 5 -root &
+	# monerod
+	monerod
 	
 exec dwm
