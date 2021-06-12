@@ -17,7 +17,10 @@
 + .config/sxhkd/
 + .config/sxhkd/**
 + .emacs.d/
-+ .emacs.d/**
++ .emacs.d/elpa/
++ .emacs.d/elpa/**
++ .emacs.d/custom-set-variables.el
++ .emacs.d/init.el
 + .local/
 + .local/bin/
 + .local/bin/connecttowifi.sh

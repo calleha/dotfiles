@@ -26,3 +26,20 @@ super + w ; p
 # set keyboard layout
 alt + space
     setkeyboardlayout.sh
+
+# toggle mute
+super + shift + m
+    amixer -q set Master toggle
+
+# media player controls
+XF86AudioPlay
+    playerctl play-pause
+
+XF86AudioNext
+    playerctl next
+    
+XF86AudioPrev
+    playerctl previous
+    
+XF86AudioStop
+    playerctl stop
