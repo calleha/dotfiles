@@ -20,12 +20,12 @@
        (alltodo "" nil))
       nil)))
  '(org-agenda-files
-   '("~/Documents/agenda/chores.org" "~/Documents/agenda/school.org" "~/Documents/agenda/shoppinglist.org" "~/Documents/agenda/configs.org" "~/Documents/school/ee/ee.org"))
+   '("~/Documents/school/programming/notes/course.org" "~/Documents/agenda/chores.org" "~/Documents/agenda/school.org" "~/Documents/agenda/shoppinglist.org" "~/Documents/agenda/configs.org" "~/Documents/school/ee/ee.org"))
  '(org-export-backends '(ascii beamer html icalendar latex odt))
  '(org-export-headline-levels 5)
  '(org-export-with-toc nil)
  '(package-selected-packages
-   '(sudo-edit gnuplot gnuplot-mode pdf-tools dmenu mc-extras multiple-cursors company-ycmd ycmd slime-company slime company org xclip ##)))
+   '(which-key sudo-edit gnuplot gnuplot-mode pdf-tools dmenu mc-extras multiple-cursors company-ycmd ycmd slime-company slime company org xclip ##)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

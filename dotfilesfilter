@@ -12,8 +12,6 @@
 + .config/ncmpcpp/**
 + .config/neofetch/
 + .config/neofetch/**
-+ .config/pcmanfm/
-+ .config/pcmanfm/**
 + .config/sxhkd/
 + .config/sxhkd/**
 + .emacs.d/

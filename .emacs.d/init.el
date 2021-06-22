@@ -92,6 +92,8 @@
 (require 'pdf-view)
 (setq pdf-view-midnight-colors `(,(face-attribute 'default :foreground) .
                                  ,(face-attribute 'default :background)))
+;;;** which-key
+(which-key-mode 1)
 ;;;* Settings
 ;;;** Functionality settings
 
