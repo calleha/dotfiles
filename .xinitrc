@@ -4,6 +4,8 @@
 	# xcape -e "Control_L=Escape" &
 	# hotkey daemon
 	sxhkd &
+	# Disable system beep
+	xset b off &
 	# Emacs
 	emacs --daemon &
 	# Screen resolution (set accordingly)
