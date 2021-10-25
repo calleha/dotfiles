@@ -3,6 +3,30 @@
 #[MODIFIER + ]*[@|!]KEYSYM
 #    COMMAND
 
+# dmenu (keybinding present in dwm config)
+#super + x
+#    dmenu_run
+
+# terminal (keybinding present in dwm config)
+#super + shift + Return
+#    st
+#super + control + Return
+#    st -t 'st (floating)'
+
+# emacs
+super + e
+    emacsclient -c
+
+# file manager
+super + m
+    pcmanfm
+
+# browser
+super + shift + f
+    firefox
+super + control + f
+    firefox --private-window
+
 # screenshots
 Print
     import -window root Pictures/screenshots/screenshot_$(date '+%Y-%m-%d_%H:%M')_$(echo $RANDOM).png
@@ -27,9 +51,21 @@ super + w ; p
 alt + space
     setkeyboardlayout.sh
 
+# brightness controls
+XF86MonBrightnessUp
+    xbacklight -steps 1 -time 0 -inc 5
+XF86MonBrightnessUp
+    xbacklight -steps 1 -time 0 -dec 5
+
+# volume controls
+XF86AudioLowerVolume
+    amixer -q set Master 5%- && pkill -f ~/.local/bin/statusbar.sh && ~/.local/bin/statusbar.sh
+XF86AudioRaiseVolume
+    amixer -q set Master 5%+ && pkill -f ~/.local/bin/statusbar.sh && ~/.local/bin/statusbar.sh
+
 # toggle mute
-super + shift + m
-    amixer -q set Master toggle
+XF86AudioMute
+    amixer -q set Master toggle && pkill -f ~/.local/bin/statusbar.sh && ~/.local/bin/statusbar.sh
 
 # media player controls
 XF86AudioPlay

@@ -11,7 +11,7 @@
 	# Screen resolution (set accordingly)
 	# xrandr --rate 144 &
 	# Background
-	feh --bg-fill ~/Pictures/grandcanyon/Cape_Royal_Sunset.jpg &
+	feh --bg-fill ~/Pictures/Serengeti_sunset-1001.jpg &
 	# picom
 	picom -c --config ~/.config/picom.conf &
 	# Touchpad settings
