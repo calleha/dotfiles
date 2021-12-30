@@ -1,9 +1,0 @@
-/home/calleha/.config/**
-/home/calleha/.emacs.d/**
-/home/calleha/.xinitrc
-/home/calleha/.gtkrc-2.0
-/home/calleha/.bash*
-/home/calleha/.X*
-/home/calleha/.notmuch-config
-/home/calleha/.mbsyncrc
-/etc/**

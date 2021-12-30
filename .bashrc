@@ -28,6 +28,7 @@ export QT_IM_MODULE=ibus
 # Set $EDITOR to emacsclient
 export VISUAL="emacsclient -c -nw"
 export EDITOR="emacsclient -c -nw"
+export PAGER="less"
 
 #PS1
 PS1='\W $ '
@@ -41,4 +42,6 @@ alias cp='cp -i'
 alias rm='rm -i'
 alias emacs='emacs -nw'
 alias emacsclient='emacsclient -c -nw'
+alias e='devour emacsclient -c'
 alias sudo='sudo '
+alias qrencode='qrencode -t UTF8'
