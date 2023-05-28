@@ -25,6 +25,8 @@
 + .local/bin/soxbatchreversestereo.sh
 + .local/bin/statusbar.sh
 + .xinitrc
++ .xinitrc-dwm
++ .xinitrc-exwm
 + .gtkrc-2.0
 + .bashrc
 + .Xdefaults

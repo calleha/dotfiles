@@ -26,8 +26,10 @@ export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
 
 # Set $EDITOR to emacsclient
-export VISUAL="emacsclient -c -nw"
-export EDITOR="emacsclient -c -nw"
+#export VISUAL="emacsclient -c -nw"
+#export EDITOR="emacsclient -c -nw"
+export VISUAL="vim"
+export EDITOR="vim"
 
 # nvm
 export NVM_DIR="$HOME/.local/src/nvm"

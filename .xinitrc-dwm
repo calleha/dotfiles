@@ -1,0 +1,28 @@
+# Autostart
+	# Swap Left Control and Caps Lock (Options: ctrl:swapcaps / ctrl:nocaps)
+	setxkbmap -layout us -option ctrl:nocaps &
+	# xcape -e "Control_L=Escape" &
+	# hotkey daemon
+	sxhkd &
+	# Disable system beep
+	xset b off &
+	# Emacs
+	emacs --daemon &
+	# Screen resolution (set accordingly)
+	# xrandr --rate 144 &
+	# Background
+	feh --bg-fill ~/Pictures/Serengeti_sunset-1001.jpg &
+	# picom
+	picom -c --config ~/.config/picom.conf &
+	# Touchpad settings
+	xinput set-prop "Synaptics tm2964-001" "libinput Natural Scrolling Enabled" 1 &
+	# Statusbar
+	~/.local/bin/statusbar.sh &
+	# Automatic hibernation at 5% battery
+	~/.local/bin/hibernateat5percent.sh &
+	# Unclutter
+	unclutter -idle 5 -root &
+	# mpd
+	mpd &
+	
+exec dwm

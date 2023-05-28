@@ -5,7 +5,7 @@ VOL=$(echo 'vol' | tr '\n' ' ' && amixer get Master | awk -F'[][]' 'END{ print $
 
 MEM=$(echo 'mem:' | tr '\n' ' ' && free --giga -h | awk '(NR==2){ print $7 }' | tr '\n' ' ' && echo 'free' | tr '\n' ' ')
 
-NET=$(echo 'net:' | tr '\n' ' ' && nmcli c show --active | awk 'FNR == 2 { print $1 }' | tr '\n' ' ' && nmcli n connectivity | awk '{ print "("$1")" }' | tr '\n' ' ')
+NET=$(echo 'net:' | tr '\n' ' ' && iwctl station wlan0 show | awk 'NR == 7 { print $3 }' | tr '\n' ' ' && iwctl station wlan0 show | awk 'NR == 6 { print "("$2")" }' | tr '\n' ' ')
 
 BT=$(echo 'bt:' | tr '\n' ' ' && bluetoothctl info | grep Name | awk '{print $2}' | tr '\n' ' ')
 
