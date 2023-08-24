@@ -21,8 +21,11 @@ xset b off &
 setxkbmap -layout us -option ctrl:nocaps &
 # hotkey daemon
 sxhkd &
+# xrandr settings
+xrandr --newmode "640x480i" 13.218975 640 672 736 840 480 484 490 525 interlace -hsync -vsync &
+xrandr --addmode VGA1 "640x480i" &
 # picom
-#picom --config ~/.config/picom.conf &
+picom &
 # Touchpad settings
 xinput set-prop "Synaptics tm2964-001" "libinput Natural Scrolling Enabled" 1 &
 # Automatic hibernation at 5% battery

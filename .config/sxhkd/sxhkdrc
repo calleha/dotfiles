@@ -5,7 +5,7 @@
 
 # dmenu (keybinding present in dwm config)
 super + x
-    dmenu_run
+    dmenu_run -b
 
 # terminal (keybinding present in dwm config)
 super + shift + Return
@@ -39,21 +39,21 @@ super + alt + s
 
 # passmenu
 super + c
-    passmenu -l 16
+    passmenu -l 16 -b
 super + shift + c
-    passmenu --type -l 16
+    passmenu --type -l 16 -b
 
 # wifi script (networkmanager)
-super + w ; f
-    connecttowifi.sh
+#super + w ; f
+#    connecttowifi.sh
 
 # bluetooth script
-super + w ; b
-    connecttobluetooth.sh
+#super + w ; b
+#    connecttobluetooth.sh
 
 # set background
-super + w ; p
-    setbackground.sh
+#super + w ; p
+#    setbackground.sh
 
 # set keyboard layout
 alt + space

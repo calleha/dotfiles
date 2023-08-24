@@ -1,3 +1,3 @@
 #!/bin/bash
-LAYOUTS="us\nus -variant intl\nse\nfr"
-echo -e $LAYOUTS | dmenu -p "choose layout" | xargs setxkbmap -option ctrl:nocaps -layout
+LAYOUTS="us\nus -variant altgr-intl\nus -variant intl\nse\nfr\nel -variant polytonic"
+echo -e $LAYOUTS | dmenu -b -p "choose layout" | xargs setxkbmap -option ctrl:nocaps -layout

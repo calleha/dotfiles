@@ -1,7 +1,7 @@
 #!/bin/bash
 COMMANDS="lock\nhibernate\nsleep\nlog out\nreboot\npower off"
 
-COMMAND=`echo -e $COMMANDS | dmenu -i -p "choose action" "$@"`
+COMMAND=`echo -e $COMMANDS | dmenu -b -i -p "choose action" "$@"`
 echo $COMMAND
 case $COMMAND in
 	lock)
@@ -17,7 +17,7 @@ case $COMMAND in
 	;;
 	"log out")
 	        TTYS="tty1\ntty2\ntty3\ntty4\ntty5\ntty6"
-		TTY=`echo -e $TTYS | dmenu -sb '#33333f' -sf '#3355ff' -i -p "which tty?" "$@"`
+		TTY=`echo -e $TTYS | dmenu -b -i -p "which tty?" "$@"`
 		echo $TTY
 		case $TTY in
 		    tty1)
