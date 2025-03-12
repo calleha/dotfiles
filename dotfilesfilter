@@ -8,12 +8,8 @@
 + .config/mpd/**
 + .config/mpv/
 + .config/mpv/**
-+ .config/ncmpcpp/
-+ .config/ncmpcpp/**
 + .config/neofetch/
 + .config/neofetch/**
-+ .config/sxhkd/
-+ .config/sxhkd/**
 + .local/
 + .local/bin/
 + .local/bin/connecttowifi.sh
@@ -26,12 +22,9 @@
 + .local/bin/statusbar.sh
 + .xinitrc
 + .xinitrc-dwm
-+ .xinitrc-exwm
 + .gtkrc-2.0
 + .bashrc
 + .Xdefaults
 + .Xresources
-+ .notmuch-config
-+ .mbsyncrc
 + .vimrc
 - *
