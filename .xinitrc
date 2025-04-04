@@ -1,11 +1,11 @@
 # Disable access control for the current user.
-xhost +SI:localuser:$USER &
+#xhost +SI:localuser:$USER &
 
 # Make Java applications aware this is a non-reparenting window manager.
-export _JAVA_AWT_WM_NONREPARENTING=1 &
+#export _JAVA_AWT_WM_NONREPARENTING=1 &
 
 # Set default cursor.
-xsetroot -cursor_name left_ptr &
+#xsetroot -cursor_name left_ptr &
 
 # Set keyboard repeat rate and disable system beep.
 #xset r rate 200 60 &
